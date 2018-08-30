@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.udacity.popular_movies_stage1.DetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+         <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+             android:id="@+id/card_view"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:foreground="?android:attr/selectableItemBackground"
+             card_view:cardBackgroundColor="@color/colorPrimary"
+             card_view:cardCornerRadius="4dp"
+             card_view:cardElevation="4dp"
+             android:layout_margin="8dp">
+
+        <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:paddingTop="8dp">
+
+            <ImageView
+                android:id="@+id/iv_poster_thumbnail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.6"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/movie_poster_in_details"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@color/cardview_shadow_start_color" />
+
+            <TextView
+                android:id="@+id/tv_vote_average_label"
+                style="@style/textImportantLabelStyle"
+                android:layout_gravity="center"
+                android:text="@string/vote_average_label"
+                app:layout_constraintTop_toBottomOf="@id/iv_poster_thumbnail"
+                app:layout_constraintEnd_toStartOf="@+id/tv_movie_vote_average"
+                app:layout_constraintRight_toLeftOf="@+id/tv_movie_vote_average"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_movie_vote_average"
+                style="@style/textStyle"
+                android:layout_gravity="center"
+                app:layout_constraintTop_toTopOf="@id/tv_vote_average_label"
+                app:layout_constraintBottom_toBottomOf="@id/tv_vote_average_label"
+                app:layout_constraintTop_toBottomOf="@id/iv_poster_thumbnail"
+
+                app:layout_constraintLeft_toRightOf="@+id/tv_vote_average_label"
+                app:layout_constraintStart_toEndOf="@+id/tv_vote_average_label"
+                tools:text="7.5" />
+
+            <TextView
+                android:id="@+id/tv_release_date_label"
+                style="@style/textImportantLabelStyle"
+                android:layout_gravity="center"
+                android:text="@string/release_date_label"
+                app:layout_constraintEnd_toStartOf="@+id/tv_movie_release_date"
+                app:layout_constraintRight_toLeftOf="@+id/tv_movie_release_date"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_vote_average_label" />
+
+            <TextView
+                android:id="@+id/tv_movie_release_date"
+                style="@style/textStyle"
+                android:layout_gravity="center"
+                app:layout_constraintTop_toTopOf="@id/tv_release_date_label"
+                app:layout_constraintBottom_toBottomOf="@id/tv_release_date_label"
+                app:layout_constraintLeft_toRightOf="@id/tv_release_date_label"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_release_date_label"
+                tools:text="2017-01-08" />
+
+       </android.support.constraint.ConstraintLayout>
+       </android.support.v7.widget.CardView>
+
+       <TextView
+           android:id="@+id/tv_plot_synopsis_label"
+           style="@style/textLabelStyle"
+           android:text="@string/plot_synopsis_label" />
+
+       <TextView
+           android:id="@+id/tv_movie_plot_synopsis"
+           style="@style/textStyle"
+           tools:text="Overview" />
+   </LinearLayout>
+</ScrollView>

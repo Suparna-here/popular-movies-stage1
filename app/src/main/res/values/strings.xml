@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">popular-movies-stage1</string>
+    <string name="movie_poster">Movie Poster</string>
+    <!-- Error messages-->
+    <string name="detail_error_message">Movie data not available</string>
+
+    <string name="error_message">
+        An error has occurred. Please check internet connection and try again.
+    </string>
+
+    <string name="movie_poster_in_details">Movie Poster with detail description</string>
+    <string name="release_date_label">Release Date :</string>
+    <string name="detail_release_date_text">Unknown</string>
+    <string name="vote_average_label">Vote Average :</string>
+    <string name="detail_vote_average_text">Unknown</string>
+    <string name="plot_synopsis_label">Plot Synopsis :</string>
+    <string name="detail_plot_synopsis_text">Unknown</string>
+    <string name="action_popularity">Sort on Popularity</string>
+    <string name="action_toprated">Sort on Top rated</string>
+</resources>
