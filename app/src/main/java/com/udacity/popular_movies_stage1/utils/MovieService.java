@@ -8,10 +8,14 @@ import retrofit2.http.Query;
 
 public class MovieService {
     public interface MovieAPI {
-        @GET("3/discover/movie?")
-        Call<MovieResponse> getMovieList(
-        @Query("api_key") String api_key,
-        @Query("sort_by") String sort_by);
-    }
 
+        @GET("3/movie/top_rated?")
+        Call<MovieResponse> getTopRatedMovieList(
+        @Query("api_key") String api_key );
+
+
+        @GET("3/movie/popular?")
+        Call<MovieResponse> getPopularMovieList(
+                @Query("api_key") String api_key );
+    }
 }
