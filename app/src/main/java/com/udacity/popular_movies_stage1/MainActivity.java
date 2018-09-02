@@ -82,8 +82,13 @@ public class MainActivity extends AppCompatActivity implements MovieDBAdapter.Mo
 
     private void loadMovieData() {
         MovieService.MovieAPI client = ServiceGenerator.createService(MovieService.MovieAPI.class);
-
-        Call<MovieResponse> call = client.getMovieList(BuildConfig.API_KEY,sort_by);
+        Call<MovieResponse> call=null;
+        if(sort_by.equals(ServiceGenerator.ORDER_POPULARITY)){
+            call = client.getPopularMovieList(BuildConfig.API_KEY);
+        }
+        else if(sort_by.equals(ServiceGenerator.ORDER_TOPRATED)){
+            call = client.getTopRatedMovieList(BuildConfig.API_KEY);
+        }
         call.enqueue(new Callback<MovieResponse >() {
                          @Override
                          public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
@@ -178,11 +183,11 @@ public class MainActivity extends AppCompatActivity implements MovieDBAdapter.Mo
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_popularity) {
+        if (id == R.id.action_popularity) {//Show Popular Movies
             sort_by=ServiceGenerator.ORDER_POPULARITY;
             loadMovieData();
             return true;
-        }else  if (id == R.id.action_toprated) {
+        }else  if (id == R.id.action_toprated) {//Show Top Rated Movies
             sort_by=ServiceGenerator.ORDER_TOPRATED;
             loadMovieData();
             return true;
