@@ -30,13 +30,9 @@ By building this app, you will demonstrate your understanding of the foundationa
 * You will incorporate libraries to simplify the amount of code you need to write.
 
 ## Used Libraries
-
-## Libraries
 *   [Android support Library](https://developer.android.com/topic/libraries/support-library)
 *   [Picasso](https://github.com/square/picasso) - for loading and caching images 
 *   [Retrofit 2](https://github.com/square/retrofit) - Type-safe HTTP client for Android and Java by Square, Inc. 
-*   [LiveData](https://developer.android.com/topic/libraries/architecture/livedata)
-*   [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
 
 ## Screen Shots
 ## Phone
